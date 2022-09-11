@@ -24,18 +24,18 @@ public class Vehicle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	private Integer vId;
+	private Integer vid;
 	@Column(length = 30)
 	private String vname;
 	@Column(length = 30)
 	private String problem;
-	@Column(length = 30)
 	private LocalDate dateof_purchase;
-	private Integer reg_number;
-	@OneToMany//student-->*books
+	@Column(length = 30)
+	private String reg_number;
+	@OneToOne
 	@JoinColumn(name="u_id")
 	private User uid;
-	@OneToMany//student-->*books
+	@OneToOne
 	@JoinColumn(name="m_id")
 	private Mechanic mid;
 	

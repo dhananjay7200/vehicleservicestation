@@ -26,18 +26,18 @@ public class UserDTO {
 	@JsonProperty("uid")
 	private Integer uid;
 	
-	@NotEmpty(message = "First name must be supplied")
-	@Length(min = 4, max = 30, message = "Invalid First name length")
+	//@NotEmpty(message = "First name must be supplied")
+	//@Length(min = 4, max = 30, message = "Invalid First name length")
 	private String name;
 
-	@NotBlank
-	@Email(message = "Invalid Email")
+	//@NotBlank
+	//@Email(message = "Invalid Email")
 	private String email;
 
 	@NotBlank(message = "address is required")
 	private String address;
 	
-	@Range(min = 10, max = 10, message = "Invalid Mobile Number")
+	//@Range(min = 10, max = 10, message = "Invalid Mobile Number")
 	private Integer mob_number;
 
 }
