@@ -18,7 +18,6 @@ import com.app.entities.Vehicle;
 @Service
 @Transactional
 public class UserServiceImpl implements IUserService {
-	
 
 	@Autowired
 	private VehicleRepository vrepo;
@@ -34,12 +33,14 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return urepo.findAll();
 	}
+	
 	//
 	@Override
 	public Optional<Vehicle> getVechicleDetails(int uid) {
 		// TODO Auto-generated method stub
 		return vrepo.findById(uid);
 	}
+	
 	//save details
 	@Override
 	public UserDTO saveUserDetails(UserDTO userdto) {
@@ -56,9 +57,22 @@ public class UserServiceImpl implements IUserService {
 	}
 	
 	@Override
-	public User getUserbyid(int id) {
-		User user=urepo.getById(id);
-		return user;
+	public String deleteUsers(int uid) {
+		String mesg = "Deletion of user details failed!!!!!!!!!!!";
+
+		if (urepo.existsById(uid)) {
+			urepo.deleteById(uid);
+			mesg = "User details deleted successfully , for emp id :" + uid;
+		}
+
+		return mesg;
+	}
+	
+	@Override
+	public String[] getEmailById(int id) {
+		// TODO Auto-generated method stub
+		return urepo.getEmailId(id);
+	}
 	}
 	
 	
@@ -66,4 +80,5 @@ public class UserServiceImpl implements IUserService {
 	
 	
 	
-}
+	
+

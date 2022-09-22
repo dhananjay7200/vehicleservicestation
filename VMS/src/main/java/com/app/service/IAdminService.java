@@ -6,4 +6,5 @@ import com.app.entities.Vehicle;
 
 public interface IAdminService {
 	Optional<Vehicle> getallVechicle();
+	
 }

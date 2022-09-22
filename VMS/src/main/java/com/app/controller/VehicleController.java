@@ -21,7 +21,7 @@ import com.app.entities.Vehicle;
 import com.app.service.IVehicleService;
 
 @RestController 
-@RequestMapping("/api/vehicle")
+@RequestMapping("/vehicle")
 public class VehicleController {
 	@Autowired
 	private IVehicleService vservice;
@@ -30,7 +30,7 @@ public class VehicleController {
 	private VehicleRepository vrepo;
 	
 	//save vehicle
-		@PostMapping
+		@PostMapping("/vehicle/post")
 		public ResponseEntity<VehicleDTO> addVehicleDetails(@RequestBody @Valid VehicleDTO vehicle){
 			System.out.println("in save Vehicle " + vehicle);
 			return new ResponseEntity<>(vservice.addVehicleDetails(vehicle), HttpStatus.CREATED);
@@ -44,8 +44,8 @@ public class VehicleController {
 			return vservice.updateVehicle(vehicle);
 		}
 		
-		//delete vehicle
-		@DeleteMapping("/delete/{vid}") // can use ANY name for a path var.
+		//delete vehicle bu id
+		@DeleteMapping("/vehicle/delete/{vid}") // can use ANY name for a path var.
 		// @PathVariable => a binding between a path var to method arg.
 		public String deleteVehicleDetails(@PathVariable @Range(min = 1, max = 100, message = "Invalid Vehicle id!!!") int vid) 
 		{
@@ -54,7 +54,7 @@ public class VehicleController {
 		}
 		
 		//get vehicle by id
-		@GetMapping("/{vid}")
+		@GetMapping("/vehicle/{vid}")
 		// @PathVariable => a binding between a path var to method arg.
 		public ResponseEntity<?> getVechDetails(@PathVariable int vid) {
 			System.out.println("in get veh " + vid);

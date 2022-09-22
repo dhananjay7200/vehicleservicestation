@@ -27,31 +27,21 @@ public class VehicleServiceImpl implements IVehicleService {
 	
 	
 	
-	//to get all vehicle
+	//used in admin controller to get all vehicle 
 	@Override
 	public List<Vehicle> getalldetails() {
 		
 		return vrepo.findAll();
 	}
 	
-	
-
-	
-
-
+	//used in mechanical contrller to get veh by mid need to uuse query
 	@Override
-	public Optional<Vehicle> getVehicle(int vid) {
+	public Optional<Vehicle> getVehicle(int mid) {
 		
-		return vrepo.findById(vid);
-	}
-
-	@Override
-	public Vehicle getvehiclebyid(int id) {
-		// TODO Auto-generated method stub
-		return vrepo.getById(id);
+		return vrepo.findById(mid);
 	}
 	
-	//save vehicle
+	//used in vehicle controller save vehicle
 	@Override
 	public VehicleDTO addVehicleDetails(VehicleDTO vehicledto) {
 		//using mapper to map dto to entity
@@ -61,7 +51,7 @@ public class VehicleServiceImpl implements IVehicleService {
 		
 	}
 
-	//to delete vehicle
+	//used in vehicle controller to delete vehicle
 	@Override
 	public String deleteVehDetails(int vid) {
 		// TODO Auto-generated method stub
@@ -74,7 +64,7 @@ public class VehicleServiceImpl implements IVehicleService {
 		return mesg;
 	}
 
-	//update
+	//used in vehicle controller to update
 	@Override
 	public Vehicle updateVehicle(Vehicle v) {
 		// TODO Auto-generated method stub

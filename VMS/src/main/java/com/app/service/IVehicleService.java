@@ -10,9 +10,8 @@ import com.app.entities.User;
 import com.app.entities.Vehicle;
 
 public interface IVehicleService {
-	Optional<Vehicle> getVehicle(int id);
+	Optional<Vehicle> getVehicle(int mid);
 	List<Vehicle> getalldetails();
-	Vehicle getvehiclebyid(int id);
 	//Vehicle_History addvehicle(Vehicle_History v);
 	//Vehicle addvehicle(Vehicle v);
 	VehicleDTO addVehicleDetails(VehicleDTO vehicle);

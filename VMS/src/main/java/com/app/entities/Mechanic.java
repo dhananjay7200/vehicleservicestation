@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -14,13 +15,14 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "Mechanics")
+@Table(name = "mechanics")
 public class Mechanic {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
-	private Integer mId;
+	private Integer mid;
 	@Column(length = 30)
 	private String name;
 	private boolean status;
+	
 }
