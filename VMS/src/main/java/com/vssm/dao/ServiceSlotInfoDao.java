@@ -58,7 +58,7 @@ public class ServiceSlotInfoDao {
 		  return center.getSlotList();
 	  }
 
-	  //Akshay  
+	   
 		/*
 		 * public int getRemaiangingSlot(int RegNo,String date) {
 		 * System.out.println(RegNo+" "+date); ServiceCenter

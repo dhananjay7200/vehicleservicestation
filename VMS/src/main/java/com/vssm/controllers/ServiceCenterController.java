@@ -64,7 +64,6 @@ public class ServiceCenterController {
 	 }   */
 	 
 	 
-	 //Akshay
 	 @GetMapping("/getCities")
 	 public ArrayList<String> getAllCities()
 	 {

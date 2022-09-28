@@ -38,10 +38,11 @@ public class ReviewDao {
 		
 	}
 	
+	//to add review{review controller}
 	public Review addReview(Review review)
 	{
-		System.out.println("hello from add review method");
-		System.out.println("hello from add review"+review.getRating()+review.getBookingId().getBookingDate());
+		System.out.println("from review dao add review method");
+		System.out.println("review dao from add review"+review.getRating()+review.getBookingId().getBookingDate());
 		Customer custom = customRepo.findByEmail(review.getBookingId().getCustomer().getEmail());
 		System.out.println("customer: "+custom.getId());
 		BookingTable booking = bookingRepo.findByCustIdAndDate(custom.getId(),review.getBookingId().getBookingDate());
@@ -51,12 +52,12 @@ public class ReviewDao {
 		return reviewRepo.save(review);
 	}
 
-	
+	//to get review{review controller}
 	public Review getReview(int bookingId)
 	{
 		return reviewRepo.findByBookingId(bookingId);
 	}
-	
+	//
 	public List<Review> getByCenter(String city, String centerName)
 	{
 		ServiceCenter center= serviceRepo.findByCityCenter(city,centerName);
